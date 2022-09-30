@@ -1,0 +1,170 @@
+
+  <!-- Full Page Intro -->
+  <div  class="bg">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row mt-5">
+
+          <!--Grid column
+          <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
+            <h1 class="h1-responsive font-weight-bold wow fadeInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s;">Philio Tennis Club </h1>
+            <hr class="hr-light wow fadeInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s;">
+            <h6 class="mb-3 wow fadeInLeft animated" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s;">
+              Philio Sport Tennis Club vous informe que la saison sportive 2022/2023 est sur le point de débuter et se présente sous de bons auspices 🎾🎾🎾🎉
+              <br>
+              Notre équipe se mobilise pour concocter une année riche en bonnes surprises 🎁, en animations originales 🎇, et en matchs à gogo pour nos plus compétiteurs 🎽.
+            </h6>
+            <a class="btn btn-outline-white wow fadeInLeft waves-effect waves-light animated" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeInLeft; animation-delay: 0.3s;">Learn more</a>
+          </div>
+          -->
+          <!--Grid column-->
+          <!--Grid column-->
+          <mat-card class="example-card">
+            <mat-card-header class="cardHeader">
+              <mat-card-title>
+                <h1>Inscription</h1>
+              </mat-card-title>
+              <mat-card-subtitle >
+                Remplissez le formulaire ci-dessous pour vous inscrire à notre service d'adhésion.
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <form [formGroup]="formSignUp" enctype="multipart/form-data">
+
+                <!-------------------------------------- Client  --------------------------------------->
+                <h1 class="mat-h1">Informations Client</h1>
+                <mat-divider fxFlex="1 0"></mat-divider>
+
+                <!-- Nom  -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nom</mat-label>
+                  <input matInput formControlName="nomClient" placeholder="Nom" matInput>
+                </mat-form-field>
+
+                <!-- Prénom -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Prénom</mat-label>
+                  <input matInput formControlName="prenomClient" placeholder="Prénom" matInput>
+                </mat-form-field>
+
+                <!-- Adresse -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Adresse</mat-label>
+                  <input matInput formControlName="adresse" placeholder="Adresse" matInput>
+                </mat-form-field>
+
+                <!-- Ancienne activité sportive -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Ancienne activité sportive</mat-label>
+                  <input matInput formControlName="ancienneActSportive" placeholder="Ancienne activité sportive" matInput>
+                </mat-form-field>
+
+                <!-- date de naissance -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Date de naissance</mat-label>
+                  <mat-label>Choisissez une date</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="dateNaissance">
+                  <mat-hint>MM/JJ/AAAA</mat-hint>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <!-- Image De Profil -->
+                <br><br>
+                <label style="color: white"> Image Du Profil : </label><br>
+                <input type="file" name="imgProfil" (change)="selectImageProfile($event)"/>
+
+                <!-- Extrait De Naissance -->
+                <br><br>
+                <label style="color: white"> Extrait De Naissance : </label><br>
+                <input type="file" name="extraitNaissance" (change)="selectExtraitNaissance($event)" />
+
+                <br><br><br>
+                <!------------------------------------ Père -------------------------------------------->
+                <h1 class="mat-h1">Informations du Père</h1>
+                <mat-divider fxFlex="1 0"></mat-divider>
+
+                <!-- Nom  -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nom</mat-label>
+                  <input matInput formControlName="nomPere" placeholder="Nom" matInput>
+                </mat-form-field>
+
+                <!-- Prénom -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Prénom</mat-label>
+                  <input matInput formControlName="prenomPere" placeholder="Prénom" matInput>
+                </mat-form-field>
+
+                <!-- Email -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>E-mail</mat-label>
+                  <input formControlName="emailPere" type="email" matInput placeholder="Email" matInput>
+                </mat-form-field>
+
+                <!-- Numéro de téléphone -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Numéro de tél.</mat-label>
+                  <input matInput formControlName="numTelPere" placeholder="Num° de téléphone" matInput>
+                </mat-form-field>
+
+                <!-- Travail -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Travail</mat-label>
+                  <input matInput formControlName="travailPere" placeholder="Travail" matInput>
+                </mat-form-field>
+
+                <br><br><br>
+                <!--------------------------------------- Mère ------------------------------------------->
+                <h1 class="mat-h1">Informations de la mère</h1>
+                <mat-divider fxFlex="1 0"></mat-divider>
+
+                <!-- Nom  -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Nom</mat-label>
+                  <input matInput formControlName="nomMere" placeholder="Nom" matInput>
+                </mat-form-field>
+
+                <!-- Prénom -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Prénom</mat-label>
+                  <input matInput formControlName="prenomMere" placeholder="Prénom" matInput>
+                </mat-form-field>
+
+                <!-- Email -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>E-mail</mat-label>
+                  <input formControlName="emailMere" type="email" matInput placeholder="Email" matInput>
+                </mat-form-field>
+
+                <!-- Numéro de téléphone -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Numéro de tél.</mat-label>
+                  <input matInput formControlName="numTelMere" placeholder="Num° de téléphone" matInput>
+                </mat-form-field>
+
+                <!-- Travail -->
+                <mat-form-field class="example-full-width">
+                  <mat-label>Travail</mat-label>
+                  <input matInput formControlName="travailMere" placeholder="Travail" matInput>
+                </mat-form-field>
+
+                <button mat-button color="primary" (click)="register()">Enregistrer</button>
+              </form>
+
+            </mat-card-content>
+
+          </mat-card>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
+  </div>
+  <!-- Full Page Intro -->
+

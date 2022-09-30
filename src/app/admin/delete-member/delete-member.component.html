@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>
+  Supprimer membre
+</h1>
+
+<div mat-dialog-content>
+  <p>Voulez-vous vraiment supprimer le patient <b>{{this.memberName}}</b> ??</p>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-button mat-dialog-close>Annuler</button>
+  <button mat-raised-button color="primary" (click)="onConfirm()" [mat-dialog-close]="true">Supprimer</button>
+</div>

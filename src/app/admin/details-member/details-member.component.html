@@ -1,0 +1,34 @@
+<div mat-dialog-content>
+  <mat-card class="example-card">
+    <mat-card-header fxLayout fxLayoutAlign="start center">
+      <!--<div mat-card-avatar class="example-header-image"> <img mat-card-image src='{{"http://localhost:8080/images/" + this.data.membre.imgProfilPath }}' height="300"></div>
+      <div mat-card-avatar class="example-header-image"
+           [ngStyle]="{'background-image': 'url(' + 'http://localhost:8080/images/' + this.data.membre.imgProfilPath  + ')'}">
+      </div>-->
+      <mat-card-title>{{this.data.membre.prenomClient }} {{this.data.membre.nomClient}}</mat-card-title>
+      <mat-card-subtitle>{{this.data.membre.dateNaissance}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src='{{"http://localhost:8080/images/" + this.data.membre.imgProfilPath }}' height="300">
+    <mat-card-content>
+      <h3> {{this.data.membre.adresse}}</h3>
+      <h3> {{this.data.membre.ancienneActSportive}}</h3>
+      <h3> {{this.data.membre.nomPere}}</h3>
+      <h3> {{this.data.membre.prenomPere}}</h3>
+      <h3> {{this.data.membre.emailPere}}</h3>
+      <h3> {{this.data.membre.emailPere}}</h3>
+      <h3> {{this.data.membre.numTelPere}}</h3>
+      <h3> {{this.data.membre.travailPere}}</h3>
+      <h3> {{this.data.membre.nomMere}}</h3>
+      <h3> {{this.data.membre.prenomMere}}</h3>
+      <h3> {{this.data.membre.emailMere}}</h3>
+      <h3> {{this.data.membre.numTelMere}}</h3>
+      <h3> {{this.data.membre.travailMere}}</h3>
+
+    </mat-card-content>
+  </mat-card>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  </mat-card-actions>
+</div>
+
+

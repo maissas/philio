@@ -1,0 +1,143 @@
+
+.all {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+/* Row hover bakground */
+.mat-row:hover .mat-cell{
+  background-color: whitesmoke;
+}
+
+.mat-column-nomClient {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.mat-column-imgProfil{
+  width: 100px;
+  text-align: center;
+}
+
+
+.mat-column-action {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.mat-column-prenomClient {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.mat-column-adresse {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.mat-column-ancienneActSportive {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.mat-column-dateNaissance {
+  width: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.mat-column-nomPere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.mat-column-prenomPere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.mat-column-emailPere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.mat-column-numTelPere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.mat-column-travailPere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.mat-column-nomMere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.mat-column-prenomMere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.mat-column-emailMere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.mat-column-numTelMere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.mat-column-travailMere {
+  width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  flex: auto;
+  margin: 0 auto ;
+
+}
+
+button {
+  margin: 0 8px 8px 0;
+}
+
