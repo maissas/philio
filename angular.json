@@ -96,6 +96,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "App-backend/public",
+            "netlifyToken": "r2B13nV3cSO66DRkRrmemFkmARer9zyHJTl9kSXnvno",
+            "siteId": "7f52dd68-a41d-4e3e-ab02-5dd4b606f08c"
+          }
         }
       }
     }
