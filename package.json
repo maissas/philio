@@ -55,7 +55,7 @@
     "typescript": "~4.7.2"
   },
   "proxy": {
-    "/.netlify/functions": {
+    "/.netlify/functions/apiServer": {
       "target": "http://localhost:8080",
       "pathRewrite": {
         "^/\\.netlify/functions": ""
