@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && cd ../ && netlify-lambda build express",
+    "build": "ng build && netlify-lambda build express",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
