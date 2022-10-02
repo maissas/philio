@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {Membre} from "../models/membre";
 
 
-const baseUrl = '/api/members';
+const baseUrl = '/.netlify/functions/api/members';
 
 @Injectable({
   providedIn: 'root'
