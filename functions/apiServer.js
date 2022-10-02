@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 //router
-app.use("/.netlify/functions/apiServer/api/members", require("./routes/members-routes"));
+app.use("/.netlify/functions/server/api/members", require("./routes/members-routes"));
 
 app.set("view engine", "ejs");
 
