@@ -1,4 +1,4 @@
-const app = require("./server/apiServer");
+const app = require("./functions/apiServer");
 const serverless = require("serverless-http");
 
 // set port, listen for requests
