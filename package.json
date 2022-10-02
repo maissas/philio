@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm install && ng build --prod && cd ../ && netlify-lambda build express",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -31,7 +31,9 @@
     "moment": "^2.29.4",
     "mongoose": "^5.13.5",
     "multer": "^1.4.5-lts.1",
+    "netlify-lambda": "^2.0.15",
     "rxjs": "~7.5.0",
+    "serverless-http": "^3.0.2",
     "swagger-jsdoc": "^6.2.5",
     "swagger-ui-express": "^4.5.0",
     "tslib": "^2.3.0",
