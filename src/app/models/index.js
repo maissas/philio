@@ -1,7 +1,3 @@
-//import * as path from "path";
-
-//const dbConfig = require("../config/db.config.js");
-
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
@@ -20,11 +16,3 @@ const connectDB = async () => {
 }
 module.exports = connectDB
 
-/*
-const db = {};
-db.mongoose = mongoose;
-db.url = "mongodb://localhost:27017/philio_db" //dbConfig.url;
-db.members = require("./member.model");
-
-module.exports = db;
-*/
