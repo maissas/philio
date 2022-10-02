@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {Membre} from "../models/membre";
 
 
-const baseUrl = 'https://philiotennis.com/api/members';
+const baseUrl = '/api/members';
 
 @Injectable({
   providedIn: 'root'
