@@ -10,10 +10,6 @@ const setMember = function (req, res, next) {
   } else if (req.body.files){
     console.log("req.body.files uploaded ;) ")
   }
-
-  console.log("req.files")
-  console.log(req.files)
-
   Member.create({
     nomClient: req.body.nomClient,
     prenomClient: req.body.prenomClient,
