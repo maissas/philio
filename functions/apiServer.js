@@ -7,7 +7,7 @@ const app = express();
 
 require('dotenv').config({ path: 'ENV_FILENAME' });
 
-const connectDB = require('../server/models')
+const connectDB = require('./models')
 
 app.use(cors())
 app.options('*', cors())
@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 //router
-app.use("/.netlify/functions/api/members", require("../server/routes/members-routes"));
+app.use("/.netlify/functions/api/members", require("./routes/members-routes"));
 
 app.set("view engine", "ejs");
 
