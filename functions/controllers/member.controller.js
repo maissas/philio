@@ -11,7 +11,7 @@ const setMember = function (req, res) {
     console.log("req.body.files uploaded ;) ")
   }
   */
-  console.log(req.log)
+  console.log(req.body)
   let member = new Member(req.body)
   member.save(function (err) {
     if (err) {
