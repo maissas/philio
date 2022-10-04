@@ -39,8 +39,8 @@ export class SignupComponent implements OnInit {
       adresse: ['', Validators.required],
       ancienneActSportive: ['', Validators.required],
       dateNaissance: ['', Validators.required],
-      imgProfil: ['', Validators.required],
-      extraitNaissance: [''],
+      //imgProfil: ['', Validators.required],
+      //extraitNaissance: [''],
       nomPere: ['', Validators.required],
       prenomPere: ['', Validators.required],
       emailPere: ['', Validators.required],
@@ -113,7 +113,7 @@ export class SignupComponent implements OnInit {
       console.log(formData.get("nomClient"))
 
       //save in database
-      this.api.create(formData)
+      this.api.create(this.formSignUp.value)
         .subscribe(
           response => {
             console.log("response");
