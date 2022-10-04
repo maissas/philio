@@ -35,6 +35,8 @@ const setMember = function (req, res, next) {
   res.status(200).json({
     description: "Successfully saved new member!"
   })
+    .then(()=>console.log('member saved'))
+    .catch(e=>console.log('Error creating member' + e));
 }
 
 /** Retrieve all Members from the database. **/
