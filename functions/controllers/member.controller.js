@@ -11,35 +11,18 @@ const setMember = function (req, res) {
     console.log("req.body.files uploaded ;) ")
   }
   */
-
-  let member = new Member({
-    nomClient: req.body.nomClient,
-    prenomClient: req.body.prenomClient,
-    adresse: req.body.adresse,
-    ancienneActSportive: req.body.ancienneActSportive,
-    dateNaissance: req.body.dateNaissance,
-    //imgProfil: req.body.imgProfil,
-    //extraitNaissance: req.body.extraitNaissance,
-    //imgProfilPath: req.body.imgProfilPath,
-    //extraitNaissancePath: req.body.extraitNaissancePath,
-    nomPere: req.body.nomPere,
-    prenomPere: req.body.prenomPere,
-    emailPere: req.body.emailPere,
-    numTelPere: req.body.numTelPere,
-    travailPere: req.body.travailPere,
-    nomMere: req.body.nomMere,
-    prenomMere: req.body.prenomMere,
-    emailMere: req.body.emailMere,
-    numTelMere: req.body.numTelMere,
-    travailMere: req.body.travailMere
-  })
+  console.log(req.log)
+  let member = new Member(req.body)
   member.save(function (err) {
     if (err) {
       console.log(err)
       res.send("ERR: " + err)
       return next(err);
     }
-    res.send('Member Created successfully')
+    res.send({
+      description:'Member Created successfully',
+      //result: membersList,
+    })
   })
 
 }

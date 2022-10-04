@@ -28,6 +28,6 @@ const MemberSchema = Schema(
       travailMere: String,
     },
     { timestamps: true }
-);
+)
 
 module.exports = mongoose.model("Member", MemberSchema)
