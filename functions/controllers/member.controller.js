@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler')
 const Member = require('../models/member.model')
 
 /** Create and Save a new Member **/
-const setMember = function (req, res, next) {
+const setMember = function (req, res) {
   console.log("inside setMember")
   /*if (req.files){
     console.log("req.files uploaded :D ")
@@ -11,35 +11,34 @@ const setMember = function (req, res, next) {
     console.log("req.body.files uploaded ;) ")
   }
   */
-  try {
-    Member.create({
-      nomClient: req.body.nomClient,
-      prenomClient: req.body.prenomClient,
-      adresse: req.body.adresse,
-      ancienneActSportive: req.body.ancienneActSportive,
-      dateNaissance: req.body.dateNaissance,
-      //imgProfil: req.body.imgProfil,
-      //extraitNaissance: req.body.extraitNaissance,
-      //imgProfilPath: req.body.imgProfilPath,
-      //extraitNaissancePath: req.body.extraitNaissancePath,
-      nomPere: req.body.nomPere,
-      prenomPere: req.body.prenomPere,
-      emailPere: req.body.emailPere,
-      numTelPere: req.body.numTelPere,
-      travailPere: req.body.travailPere,
-      nomMere: req.body.nomMere,
-      prenomMere: req.body.prenomMere,
-      emailMere: req.body.emailMere,
-      numTelMere: req.body.numTelMere,
-      travailMere: req.body.travailMere
-    }).then(r =>  console.log(r))
-    res.status(200).json({
-      description: "Successfully saved new member!"
-    })
-  } catch (error) {
-    console.log(`Error creating member --> ${error}`);
-    return error;
-  }
+
+  let member = new Member({
+    nomClient: req.body.nomClient,
+    prenomClient: req.body.prenomClient,
+    adresse: req.body.adresse,
+    ancienneActSportive: req.body.ancienneActSportive,
+    dateNaissance: req.body.dateNaissance,
+    //imgProfil: req.body.imgProfil,
+    //extraitNaissance: req.body.extraitNaissance,
+    //imgProfilPath: req.body.imgProfilPath,
+    //extraitNaissancePath: req.body.extraitNaissancePath,
+    nomPere: req.body.nomPere,
+    prenomPere: req.body.prenomPere,
+    emailPere: req.body.emailPere,
+    numTelPere: req.body.numTelPere,
+    travailPere: req.body.travailPere,
+    nomMere: req.body.nomMere,
+    prenomMere: req.body.prenomMere,
+    emailMere: req.body.emailMere,
+    numTelMere: req.body.numTelMere,
+    travailMere: req.body.travailMere
+  })
+  member.save(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.send('Product Created successfully')
+  })
 
 }
 

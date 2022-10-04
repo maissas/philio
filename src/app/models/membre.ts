@@ -7,10 +7,10 @@ export class Membre {
   adresse: String;
   ancienneActSportive: String;
   dateNaissance: String;
-  imgProfil: String;
-  extraitNaissance: String;
-  imgProfilPath: String;
-  extraitNaissancePath: String;
+  //imgProfil: String;
+  //extraitNaissance: String;
+  //imgProfilPath: String;
+  //extraitNaissancePath: String;
 
   nomPere: String;
   prenomPere: String;
