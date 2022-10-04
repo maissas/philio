@@ -35,6 +35,7 @@ const setMember = function (req, res) {
   })
   member.save(function (err) {
     if (err) {
+      res.send("ERR: " + err)
       return next(err);
     }
     res.send('Product Created successfully')
