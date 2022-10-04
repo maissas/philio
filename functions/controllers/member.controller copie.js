@@ -11,8 +11,8 @@ const setMember = async function (event, res) {
     console.log("req.body.files uploaded ;) ")
   }
   */
-  console.log(event.body)
-  let member = new Member(event.body)
+  console.log(req.body)
+  let member = new Member(req.body)
   member.save(function (err) {
     if (err) {
       console.log(err)
