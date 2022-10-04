@@ -4,7 +4,7 @@ const Member = require('../models/member.model')
 
 /** Create and Save a new Member **/
 const setMember = function (req, res, next) {
-
+  console.log("inside setMember")
   if (req.files){
     console.log("req.files uploaded :D ")
   } else if (req.body.files){
