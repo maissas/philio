@@ -4,7 +4,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const MemberSchema = Schema(
     {
       nomClient: String,
@@ -12,10 +11,6 @@ const MemberSchema = Schema(
       adresse: String,
       ancienneActSportive: String,
       dateNaissance: String,
-      //imgProfil: String,
-      //extraitNaissance: String,
-      //imgProfilPath:  String,
-      //extraitNaissancePath: String,
       nomPere: String,
       prenomPere: String,
       emailPere: String,
@@ -31,3 +26,9 @@ const MemberSchema = Schema(
 )
 
 module.exports = mongoose.model("Member", MemberSchema)
+
+
+//imgProfil: String,
+//extraitNaissance: String,
+//imgProfilPath:  String,
+//extraitNaissancePath: String,

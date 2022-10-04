@@ -77,41 +77,41 @@ export class SignupComponent implements OnInit {
   register() {
     if (this.formSignUp.valid) {
       console.log("form is valid")
+      /*
+           this.formSignUp.value.dateNaissance = moment(this.formSignUp.value.dateOfBirth).format('MM-DD-YYYY')
+           const formData = new FormData();
+           formData.set("nomClient", this.formSignUp.value.nomClient)
+           formData.set("prenomClient", this.formSignUp.value.prenomClient)
+           formData.set("adresse", this.formSignUp.value.adresse)
+           formData.set("ancienneActSportive", this.formSignUp.value.ancienneActSportive)
+           formData.set("dateNaissance", this.formSignUp.value.dateNaissance)
+           formData.set("nomPere", this.formSignUp.value.nomPere)
+           formData.set("prenomPere", this.formSignUp.value.prenomPere)
+           formData.set("emailPere", this.formSignUp.value.emailPere)
+           formData.set("numTelPere", this.formSignUp.value.numTelPere)
+           formData.set("travailPere", this.formSignUp.value.travailPere)
+           formData.set("nomMere", this.formSignUp.value.nomMere)
+           formData.set("prenomMere", this.formSignUp.value.prenomMere)
+           formData.set("emailMere", this.formSignUp.value.emailMere)
+           formData.set("numTelMere", this.formSignUp.value.numTelMere)
+         ormData.set("travailMere", this.formSignUp.value.travailMere)
 
-      this.formSignUp.value.dateNaissance = moment(this.formSignUp.value.dateOfBirth).format('MM-DD-YYYY')
-      const formData = new FormData();
-      formData.set("nomClient", this.formSignUp.value.nomClient)
-      formData.set("prenomClient", this.formSignUp.value.prenomClient)
-      formData.set("adresse", this.formSignUp.value.adresse)
-      formData.set("ancienneActSportive", this.formSignUp.value.ancienneActSportive)
-      formData.set("dateNaissance", this.formSignUp.value.dateNaissance)
-      formData.set("nomPere", this.formSignUp.value.nomPere)
-      formData.set("prenomPere", this.formSignUp.value.prenomPere)
-      formData.set("emailPere", this.formSignUp.value.emailPere)
-      formData.set("numTelPere", this.formSignUp.value.numTelPere)
-      formData.set("travailPere", this.formSignUp.value.travailPere)
-      formData.set("nomMere", this.formSignUp.value.nomMere)
-      formData.set("prenomMere", this.formSignUp.value.prenomMere)
-      formData.set("emailMere", this.formSignUp.value.emailMere)
-      formData.set("numTelMere", this.formSignUp.value.numTelMere)
-      formData.set("travailMere", this.formSignUp.value.travailMere)
-
-      //files
-      /*if (this.formSignUp.value.imgProfil) {
-        formData.set("imgProfil", this.formSignUp.value.imgProfil, this.formSignUp.value.imgProfil.name)
-        formData.set("imgProfilPath", "imgProfil" + "-" + this.formSignUp.value.imgProfil.name)
-      }
-      if (this.formSignUp.value.extraitNaissance){
-        formData.set("extraitNaissance", this.formSignUp.value.extraitNaissance, this.formSignUp.value.extraitNaissance.name)
-        formData.set("extraitNaissancePath",  "extraitNaissance" + "-" + this.formSignUp.value.extraitNaissance.name)
-      }*/
-
-      //'http://127.0.0.1:8080/uploads/'
-
-      // Display the key/value pairs
+           //files
+           /*if (this.formSignUp.value.imgProfil) {
+             formData.set("imgProfil", this.formSignUp.value.imgProfil, this.formSignUp.value.imgProfil.name)
+             formData.set("imgProfilPath", "imgProfil" + "-" + this.formSignUp.value.imgProfil.name)
+           }
+           if (this.formSignUp.value.extraitNaissance){
+             formData.set("extraitNaissance", this.formSignUp.value.extraitNaissance, this.formSignUp.value.extraitNaissance.name)
+             formData.set("extraitNaissancePath",  "extraitNaissance" + "-" + this.formSignUp.value.extraitNaissance.name)
+           }
+          // Display the key/value pairs
       console.log(formData.get("imgProfil"))
       console.log(formData.get("nomClient"))
+      */
+      //'http://127.0.0.1:8080/uploads/'
 
+      console.log(this.formSignUp.value)
       //save in database
       this.api.create(this.formSignUp.value)
         .subscribe(
