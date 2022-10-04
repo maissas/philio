@@ -32,7 +32,7 @@ const setMember = function (req, res, next) {
       emailMere: req.body.emailMere,
       numTelMere: req.body.numTelMere,
       travailMere: req.body.travailMere
-    })
+    }).then(r =>  console.log(r))
     res.status(200).json({
       description: "Successfully saved new member!"
     })
