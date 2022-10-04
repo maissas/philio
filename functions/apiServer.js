@@ -33,6 +33,7 @@ app.use((req,res,next)=>{
   next();
 });
 
+console.log("going to connect to db")
 //Connection database
 connectDB()
   .then(() => {
