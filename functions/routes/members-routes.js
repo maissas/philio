@@ -33,7 +33,7 @@ const upload = multer({storage: storage}); //multer({ dest: 'uploads/' })
 
 // Create a new Member
 const multipleUpload = upload.fields([{name: 'imgProfil'}, {name: 'extraitNaissance'}]);
-router.post("/", multipleUpload, setMember);
+router.post("/",/* multipleUpload,*/ setMember);
 
 // Retrieve all Members
 router.route("/").get(getAllMembers);
