@@ -11,32 +11,36 @@ const setMember = function (req, res, next) {
     console.log("req.body.files uploaded ;) ")
   }
   */
-  Member.create({
-    nomClient: req.body.nomClient,
-    prenomClient: req.body.prenomClient,
-    adresse: req.body.adresse,
-    ancienneActSportive: req.body.ancienneActSportive,
-    dateNaissance: req.body.dateNaissance,
-    //imgProfil: req.body.imgProfil,
-    //extraitNaissance: req.body.extraitNaissance,
-    //imgProfilPath: req.body.imgProfilPath,
-    //extraitNaissancePath: req.body.extraitNaissancePath,
-    nomPere: req.body.nomPere,
-    prenomPere: req.body.prenomPere,
-    emailPere: req.body.emailPere,
-    numTelPere: req.body.numTelPere,
-    travailPere: req.body.travailPere,
-    nomMere: req.body.nomMere,
-    prenomMere: req.body.prenomMere,
-    emailMere: req.body.emailMere,
-    numTelMere: req.body.numTelMere,
-    travailMere: req.body.travailMere
-  })
-  res.status(200).json({
-    description: "Successfully saved new member!"
-  })
-    .then(()=>console.log('member saved'))
-    .catch(e=>console.log('Error creating member' + e));
+  try {
+    Member.create({
+      nomClient: req.body.nomClient,
+      prenomClient: req.body.prenomClient,
+      adresse: req.body.adresse,
+      ancienneActSportive: req.body.ancienneActSportive,
+      dateNaissance: req.body.dateNaissance,
+      //imgProfil: req.body.imgProfil,
+      //extraitNaissance: req.body.extraitNaissance,
+      //imgProfilPath: req.body.imgProfilPath,
+      //extraitNaissancePath: req.body.extraitNaissancePath,
+      nomPere: req.body.nomPere,
+      prenomPere: req.body.prenomPere,
+      emailPere: req.body.emailPere,
+      numTelPere: req.body.numTelPere,
+      travailPere: req.body.travailPere,
+      nomMere: req.body.nomMere,
+      prenomMere: req.body.prenomMere,
+      emailMere: req.body.emailMere,
+      numTelMere: req.body.numTelMere,
+      travailMere: req.body.travailMere
+    })
+    res.status(200).json({
+      description: "Successfully saved new member!"
+    })
+  } catch (error) {
+    console.log(`Error creating member --> ${error}`);
+    return error;
+  }
+
 }
 
 /** Retrieve all Members from the database. **/
