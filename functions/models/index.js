@@ -1,9 +1,8 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const dotenv = require('dotenv').config()
 
-mongoose.Promise = global.Promise;
-
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+const dbURI = process.env.MONGODB_URI;
+const client = new MongoClient(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const connectDB = async () => {
   try{
