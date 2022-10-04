@@ -97,8 +97,10 @@ export class SignupComponent implements OnInit {
       formData.set("travailMere", this.formSignUp.value.travailMere)
 
       //files
-      formData.set("imgProfil", this.formSignUp.value.imgProfil, this.formSignUp.value.imgProfil.name)
-      formData.set("imgProfilPath",   "imgProfil" + "-" + this.formSignUp.value.imgProfil.name )
+      if (this.formSignUp.value.imgProfil) {
+        formData.set("imgProfil", this.formSignUp.value.imgProfil, this.formSignUp.value.imgProfil.name)
+        formData.set("imgProfilPath", "imgProfil" + "-" + this.formSignUp.value.imgProfil.name)
+      }
       if (this.formSignUp.value.extraitNaissance){
         formData.set("extraitNaissance", this.formSignUp.value.extraitNaissance, this.formSignUp.value.extraitNaissance.name)
         formData.set("extraitNaissancePath",  "extraitNaissance" + "-" + this.formSignUp.value.extraitNaissance.name)
