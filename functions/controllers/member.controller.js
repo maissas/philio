@@ -35,10 +35,11 @@ const setMember = function (req, res) {
   })
   member.save(function (err) {
     if (err) {
+      console.log(err)
       res.send("ERR: " + err)
       return next(err);
     }
-    res.send('Product Created successfully')
+    res.send('Member Created successfully')
   })
 
 }
