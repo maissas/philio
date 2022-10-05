@@ -36,6 +36,7 @@ export class SaveImageProfileComponent implements OnInit {
     if ((event.target as HTMLInputElement).files.length > 0){
       console.log((event.target as HTMLInputElement).files[0])
       const file = this.readFile((event.target as HTMLInputElement).files[0]);
+
       //this.formSignUp.patchValue({ imgProfil: file });
     } else {
       console.log("there is No ImgProfil image !!")
