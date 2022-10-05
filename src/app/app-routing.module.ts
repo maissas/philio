@@ -8,9 +8,14 @@ import {SaveUserInfosComponent} from "./save-user-infos/save-user-infos.componen
 
 
 const appRoutes: Routes = [
-  { path: '', pathMatch : 'full', redirectTo: 'signup/saveUserInfos' }, //no route
+  { path: '', pathMatch : 'full', redirectTo: 'signup' }, //no route
   { path: 'signup', component: SignupComponent,
     children: [
+      {
+        path:'',
+        redirectTo: 'saveUserInfos',
+        pathMatch: 'full'
+      },
       {
         path:'saveUserInfos', component: SaveUserInfosComponent
       },
