@@ -21,9 +21,21 @@ export class SaveImageProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  readFile(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
   selectImageProfile($event){
     if ((event.target as HTMLInputElement).files.length > 0){
-      const file = (event.target as HTMLInputElement).files[0];
+      console.log((event.target as HTMLInputElement).files[0])
+      const file = this.readFile((event.target as HTMLInputElement).files[0]);
       //this.formSignUp.patchValue({ imgProfil: file });
     } else {
       console.log("there is No ImgProfil image !!")
@@ -32,7 +44,7 @@ export class SaveImageProfileComponent implements OnInit {
 
   selectExtraitNaissance($event){
     if ((event.target as HTMLInputElement).files.length > 0){
-      const file = (event.target as HTMLInputElement).files[0];
+      const file = this.readFile((event.target as HTMLInputElement).files[0]);
       //this.formSignUp.patchValue({ extraitNaissance: file });
     } else {
       console.log("there is No extraitNaissance image !!")
