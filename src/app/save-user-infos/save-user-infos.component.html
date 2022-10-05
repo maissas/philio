@@ -1,0 +1,126 @@
+<mat-card class="example-card">
+  <mat-card-header class="cardHeader">
+    <mat-card-title>
+      <h1>Inscription</h1>
+    </mat-card-title>
+    <mat-card-subtitle >
+      Remplissez le formulaire ci-dessous pour vous inscrire à notre service d'adhésion.
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="formSignUp" enctype="multipart/form-data">
+
+      <!-------------------------------------- Client  --------------------------------------->
+      <h1 class="mat-h1">Informations Client</h1>
+      <mat-divider fxFlex="1 0"></mat-divider>
+
+      <!-- Nom  -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nomClient" placeholder="Nom" matInput>
+      </mat-form-field>
+
+      <!-- Prénom -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="prenomClient" placeholder="Prénom" matInput>
+      </mat-form-field>
+
+      <!-- Adresse -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Adresse</mat-label>
+        <input matInput formControlName="adresse" placeholder="Adresse" matInput>
+      </mat-form-field>
+
+      <!-- Ancienne activité sportive -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Ancienne activité sportive</mat-label>
+        <input matInput formControlName="ancienneActSportive" placeholder="Ancienne activité sportive" matInput>
+      </mat-form-field>
+
+      <!-- date de naissance -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Date de naissance</mat-label>
+        <mat-label>Choisissez une date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateNaissance">
+        <mat-hint>JJ/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <br><br><br>
+      <!------------------------------------ Père -------------------------------------------->
+      <h1 class="mat-h1">Informations du Père</h1>
+      <mat-divider fxFlex="1 0"></mat-divider>
+
+      <!-- Nom  -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nomPere" placeholder="Nom" matInput>
+      </mat-form-field>
+
+      <!-- Prénom -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="prenomPere" placeholder="Prénom" matInput>
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field class="example-full-width">
+        <mat-label>E-mail</mat-label>
+        <input formControlName="emailPere" type="email" matInput placeholder="Email" matInput>
+      </mat-form-field>
+
+      <!-- Numéro de téléphone -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Numéro de tél.</mat-label>
+        <input matInput formControlName="numTelPere" placeholder="Num° de téléphone" matInput>
+      </mat-form-field>
+
+      <!-- Travail -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Travail</mat-label>
+        <input matInput formControlName="travailPere" placeholder="Travail" matInput>
+      </mat-form-field>
+
+      <br><br><br>
+      <!--------------------------------------- Mère ------------------------------------------->
+      <h1 class="mat-h1">Informations de la mère</h1>
+      <mat-divider fxFlex="1 0"></mat-divider>
+
+      <!-- Nom  -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nomMere" placeholder="Nom" matInput>
+      </mat-form-field>
+
+      <!-- Prénom -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="prenomMere" placeholder="Prénom" matInput>
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field class="example-full-width">
+        <mat-label>E-mail</mat-label>
+        <input formControlName="emailMere" type="email" matInput placeholder="Email" matInput>
+      </mat-form-field>
+
+      <!-- Numéro de téléphone -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Numéro de tél.</mat-label>
+        <input matInput formControlName="numTelMere" placeholder="Num° de téléphone" matInput>
+      </mat-form-field>
+
+      <!-- Travail -->
+      <mat-form-field class="example-full-width">
+        <mat-label>Travail</mat-label>
+        <input matInput formControlName="travailMere" placeholder="Travail" matInput>
+      </mat-form-field>
+
+      <button mat-button color="primary" (click)="register()">Enregistrer</button>
+    </form>
+
+  </mat-card-content>
+
+</mat-card>

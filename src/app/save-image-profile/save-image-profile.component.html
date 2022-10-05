@@ -1,0 +1,27 @@
+<mat-card class="example-card">
+  <mat-card-header class="cardHeader">
+    <mat-card-title>
+      <h1>Inscription</h1>
+    </mat-card-title>
+    <mat-card-subtitle >
+      Remplissez le formulaire ci-dessous pour vous inscrire à notre service d'adhésion.
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <!-- add Image with input -->
+
+    <!-- Image De Profil -->
+    <br><br>
+    <label style="color: white"> Image Du Profil : </label><br>
+    <input type="file" name="imgProfil" (change)="selectImageProfile($event)"/>
+
+    <!-- Extrait De Naissance -->
+    <br><br>
+    <label style="color: white"> Extrait De Naissance : </label><br>
+    <input type="file" name="extraitNaissance" (change)="selectExtraitNaissance($event)" />
+
+
+  </mat-card-content>
+
+</mat-card>

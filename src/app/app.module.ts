@@ -27,12 +27,18 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from '@angular/material/core';
 import {AngularMaterialModule} from "./material.module";
 import { HttpClientModule } from '@angular/common/http';
+import { UploadImagesComponent } from './upload-images/upload-images.component';
+import { SaveUserInfosComponent } from './save-user-infos/save-user-infos.component';
+import { SaveImageProfileComponent } from './save-image-profile/save-image-profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent
+    SignupComponent,
+    UploadImagesComponent,
+    SaveUserInfosComponent,
+    SaveImageProfileComponent
   ],
   imports: [
 

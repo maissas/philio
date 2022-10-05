@@ -1,0 +1,48 @@
+.mat-card{
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.mat-h1, mat-card-title {
+  color : white;
+}
+
+.mat-card-subtitle {
+  color : aliceblue;
+}
+
+.example-full-width {
+  margin-top: 10px;
+  width: 100%;
+}
+
+
+.example-full-width mat-label {
+  color: white;
+  /* add label text color here */
+}
+
+.example-full-width .mat-input-element {
+  color: white;
+  /* add input text color here */
+}
+
+.example-full-width .mat-input-element::placeholder {
+  color: white;
+  /* add placeholder css here */
+}
+
+mat-datepicker-toggle {
+  color: white !important;
+}
+
+.mat-button{
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  height: 40px;
+  background-color: #3F51B5;
+}
+
+.cardHeader{
+  position: center;
+}

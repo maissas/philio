@@ -1,0 +1,16 @@
+.mat-card{
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
+.mat-h1, mat-card-title {
+  color : white;
+}
+
+.mat-card-subtitle {
+  color : aliceblue;
+}
+
+
+.cardHeader{
+  position: center;
+}
