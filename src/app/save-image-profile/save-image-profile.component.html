@@ -4,25 +4,25 @@
       <h1 > Inscription </h1>
     </mat-card-title>
     <mat-card-subtitle >
-      <p style="color: #4ca127"> Vos informations sont enregistrés avec succès </p> <br>
-      2. Merci d'ajouter votre photo de profile et votre extrait de naissance
+      <!--<p style="color: #4ca127"> Vos informations sont enregistrés avec succès </p> <br>-->
+      2. Merci d'ajouter votre photo de profil et votre extrait de naissance
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
 
     <!-- add Image with input -->
-    <form [formGroup]="formSignUp" enctype="multipart/form-data">
+
       <!-- Image De Profil -->
       <label style="color: white"> Image Du Profil : </label><br>
-      <input type="file" id="uploaderProfileImage" name="imgProfil" (change)="selectImageProfile($event)"/>
 
+      <input type="file" id="uploaderProfileImage" name="imgProfil" (change)="selectImageProfile($event)"/>
       <!-- Extrait De Naissance
       <br><br>
       <label style="color: white"> Extrait De Naissance : </label><br>
       <input type="file" id="uploaderExtraitNaissance" name="extraitNaissance" (change)="selectExtraitNaissance($event)" />
       -->
       <button mat-button color="primary" (click)="register()">Enregistrer</button>
-    </form>
+
 
   </mat-card-content>
 

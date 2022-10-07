@@ -17,20 +17,18 @@ export class SaveImageProfileComponent implements OnInit {
   fileImageProfile: File | null = null;
   imageData: string;
 */
-  formSignUp: FormGroup;
+
   fileInput
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
-
-
   selectImageProfile($event){
     if ((event.target as HTMLInputElement).files.length > 0){
       console.log((event.target as HTMLInputElement).files[0])
       //const fileInput = this.readFile((event.target as HTMLInputElement).files[0]);
-      const fileInput = (event.target as HTMLInputElement).files[0];
+      this.fileInput = (event.target as HTMLInputElement).files[0];
 
       //this.formSignUp.patchValue({ imgProfil: file });
     } else {
