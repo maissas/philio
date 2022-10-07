@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import axios from "axios";
+import {HttpClient} from "@angular/common/http";
+
 @Component({
   selector: 'app-save-image-profile',
   templateUrl: './save-image-profile.component.html',
@@ -18,7 +19,7 @@ export class SaveImageProfileComponent implements OnInit {
 */
   formSignUp: FormGroup;
   fileInput
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -64,7 +65,7 @@ export class SaveImageProfileComponent implements OnInit {
     const formData = new FormData();
     formData.append('file', this.fileInput);
     formData.append('upload_preset', "wtfvrxqs");
-    axios.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
+    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
 
   }
 }
