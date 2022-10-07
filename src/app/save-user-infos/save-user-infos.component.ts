@@ -26,7 +26,8 @@ export class SaveUserInfosComponent implements OnInit {
       adresse: ['', Validators.required],
       ancienneActSportive: ['', Validators.required],
       dateNaissance: ['', Validators.required],
-
+      imageProfilePath: [''],
+      imageExtraitNaissancePath: [''],
       nomPere: ['', Validators.required],
       prenomPere: ['', Validators.required],
       emailPere: ['', Validators.required],
@@ -42,8 +43,8 @@ export class SaveUserInfosComponent implements OnInit {
 
   register() {
     this.formSignUp.value.dateNaissance = moment(this.formSignUp.value.dateOfBirth).format('MM-DD-YYYY')
-    this.formSignUp.value.imgProfilPath = ""
-    this.formSignUp.value.extraitNaissancePath = ""
+    this.formSignUp.value.imageProfilePath = ""
+    this.formSignUp.value.imageExtraitNaissancePath = ""
 
     if (this.formSignUp.valid) {
       console.log("form is valid")
