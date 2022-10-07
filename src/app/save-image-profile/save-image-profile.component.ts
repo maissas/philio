@@ -126,18 +126,16 @@ export class SaveImageProfileComponent implements OnInit {
     //add images url
     console.log(this.data)
     //save member in database
-    /*this.api.create(this.data)
+    this.api.create(this.data)
       .subscribe(
         response => {
           console.log("response");
           console.log(response);
           //this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
-
-
         },
         error => {
           console.log("error");
           console.log(error);
-        });*/
+        });
   }
 }
