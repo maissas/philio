@@ -38,7 +38,7 @@ export class SaveUserInfosComponent implements OnInit {
       emailMere: ['', Validators.required],
       numTelMere: ['', Validators.required],
       travailMere: ['', Validators.required],
-      x: ['', Validators.required]
+      x: ['']
     });
   }
 
