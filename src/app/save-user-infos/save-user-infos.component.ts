@@ -76,7 +76,7 @@ export class SaveUserInfosComponent implements OnInit {
       */
       //'http://127.0.0.1:8080/uploads/'
 
-      this.router.navigate(['/user'], this.formSignUp.value).then(r => console.log(r));
+      this.router.navigate(['/saveImageProfile']);
       //save in database
       /*this.api.create(this.formSignUp.value)
         .subscribe(
@@ -84,7 +84,7 @@ export class SaveUserInfosComponent implements OnInit {
             console.log("response");
             console.log(response);
             this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
-            this.router.navigate(['/user'], this.formSignUp.value);
+            this.router.navigate(['/saveImageProfile']);
 
           },
           error => {

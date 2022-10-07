@@ -47,7 +47,7 @@ export class SaveImageProfileComponent implements OnInit {
   constructor(private http: HttpClient,
               private router: Router)
   {
-    console.log(this.router.getCurrentNavigation().extras.state)
+    console.log(this.router.getCurrentNavigation().extras)
   }
 
   ngOnInit(): void {
