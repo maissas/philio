@@ -76,21 +76,21 @@ export class SaveUserInfosComponent implements OnInit {
       */
       //'http://127.0.0.1:8080/uploads/'
 
-      console.log(this.formSignUp.value)
+      this.router.navigate(['/user'], this.formSignUp.value);
       //save in database
-      this.api.create(this.formSignUp.value)
+      /*this.api.create(this.formSignUp.value)
         .subscribe(
           response => {
             console.log("response");
             console.log(response);
             this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
-            this.router.navigate(['/user']);
+            this.router.navigate(['/user'], this.formSignUp.value);
 
           },
           error => {
             console.log("error");
             console.log(error);
-          });
+          });*/
     } else {
       console.log("form not valid")
       this.snackbarService.warning("Veuillez remplir les champs nécessaires")

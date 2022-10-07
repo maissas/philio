@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 class uploadResponse
 {
@@ -24,6 +25,7 @@ class uploadResponse
   "access_mode": String;
   "original_filename": String;
 }
+
 @Component({
   selector: 'app-save-image-profile',
   templateUrl: './save-image-profile.component.html',
@@ -42,7 +44,11 @@ export class SaveImageProfileComponent implements OnInit {
 
   fileInputProfile
   fileInputExtrait
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private router: Router)
+  {
+    console.log(this.router.getCurrentNavigation().extras.state)
+  }
 
   ngOnInit(): void {
 
