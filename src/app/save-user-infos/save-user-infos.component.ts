@@ -27,8 +27,6 @@ export class SaveUserInfosComponent implements OnInit {
       ancienneActSportive: ['', Validators.required],
       dateNaissance: ['', Validators.required],
 
-      imgProfilPath: ['', Validators.required],
-      extraitNaissancePath: [''],
       nomPere: ['', Validators.required],
       prenomPere: ['', Validators.required],
       emailPere: ['', Validators.required],
