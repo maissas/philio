@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {SnackbarService} from "../SnackbarService/snackbar.service";
 import {ApiService} from "../api/api.service";
 import {Router} from "@angular/router";
+import * as moment from "moment";
+
 
 @Component({
   selector: 'app-save-user-infos',
@@ -24,8 +26,8 @@ export class SaveUserInfosComponent implements OnInit {
       adresse: ['', Validators.required],
       ancienneActSportive: ['', Validators.required],
       dateNaissance: ['', Validators.required],
-      //imgProfil: ['', Validators.required],
-      //extraitNaissance: [''],
+      imgProfil: ['', Validators.required],
+      extraitNaissance: [''],
       nomPere: ['', Validators.required],
       prenomPere: ['', Validators.required],
       emailPere: ['', Validators.required],
@@ -41,9 +43,10 @@ export class SaveUserInfosComponent implements OnInit {
 
   register() {
     if (this.formSignUp.valid) {
+      this.formSignUp.value.dateNaissance = moment(this.formSignUp.value.dateOfBirth).format('MM-DD-YYYY')
       console.log("form is valid")
       /*
-           this.formSignUp.value.dateNaissance = moment(this.formSignUp.value.dateOfBirth).format('MM-DD-YYYY')
+
            const formData = new FormData();
            formData.set("nomClient", this.formSignUp.value.nomClient)
            formData.set("prenomClient", this.formSignUp.value.prenomClient)
@@ -75,22 +78,8 @@ export class SaveUserInfosComponent implements OnInit {
       console.log(formData.get("nomClient"))
       */
       //'http://127.0.0.1:8080/uploads/'
+      this.router.navigate(['signup/saveImageProfile'], this.formSignUp.value);
 
-      console.log(this.formSignUp.value)
-      //save in database
-      this.api.create(this.formSignUp.value)
-        .subscribe(
-          response => {
-            console.log("response");
-            console.log(response);
-            this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
-            this.router.navigate(['signup/saveImageProfile']);
-
-          },
-          error => {
-            console.log("error");
-            console.log(error);
-          });
     } else {
       console.log("form not valid")
       this.snackbarService.warning("Veuillez remplir les champs nécessaires")

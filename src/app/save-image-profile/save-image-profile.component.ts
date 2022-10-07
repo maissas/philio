@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {ApiService} from "../api/api.service";
+import {FormBuilder} from "@angular/forms";
 
 class uploadResponse
 {
@@ -44,9 +46,11 @@ export class SaveImageProfileComponent implements OnInit {
 
   fileInputProfile
   fileInputExtrait
-  constructor(private http: HttpClient,
+  constructor(private api : ApiService,
+              private http: HttpClient,
               private router: Router)
   {
+    console.log("data" )
     console.log(this.router.getCurrentNavigation().extras)
   }
 
@@ -115,5 +119,22 @@ export class SaveImageProfileComponent implements OnInit {
           console.log("error");
           console.log(error);
         });
+
+    //add images url
+
+    //save member in database
+    /*this.api.create(this.formSignUp.value)
+      .subscribe(
+        response => {
+          console.log("response");
+          console.log(response);
+          //this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
+
+
+        },
+        error => {
+          console.log("error");
+          console.log(error);
+        });*/
   }
 }

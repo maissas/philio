@@ -9,8 +9,8 @@ export class Membre {
   dateNaissance: String;
   //imgProfil: String;
   //extraitNaissance: String;
-  //imgProfilPath: String;
-  //extraitNaissancePath: String;
+  imgProfilPath: String;
+  extraitNaissancePath: String;
 
   nomPere: String;
   prenomPere: String;
