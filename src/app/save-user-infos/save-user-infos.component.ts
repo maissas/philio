@@ -80,7 +80,7 @@ export class SaveUserInfosComponent implements OnInit {
       console.log(formData.get("nomClient"))
       */
       //'http://127.0.0.1:8080/uploads/'
-      this.router.navigate(['signup/saveImageProfile'], this.formSignUp.value);
+      this.router.navigate(['signup/saveImageProfile', JSON.stringify(this.formSignUp.value)]);
 
     } else {
       console.log("form not valid")

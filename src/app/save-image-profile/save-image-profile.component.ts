@@ -46,12 +46,16 @@ export class SaveImageProfileComponent implements OnInit {
 
   fileInputProfile
   fileInputExtrait
-  constructor(private api : ApiService,
+
+  data
+  constructor(private fb: FormBuilder,
+              private api : ApiService,
               private http: HttpClient,
               private router: Router)
   {
-    console.log("data" )
-    console.log(this.router.getCurrentNavigation().extras)
+    console.log("data")
+    this.data = JSON.parse(this.router.getCurrentNavigation().extras as string)
+    console.log(this.data)
   }
 
   ngOnInit(): void {
@@ -67,7 +71,6 @@ export class SaveImageProfileComponent implements OnInit {
       console.log("there is No ImgProfil image !!")
     }
   }
-
 
   selectExtraitNaissance($event){
     if ((event.target as HTMLInputElement).files.length > 0){
