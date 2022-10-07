@@ -111,7 +111,7 @@ export class SaveImageProfileComponent implements OnInit {
             response => {
               console.log("response");
               console.log((response as uploadResponse).secure_url);
-              //this.data["extraitNaissancePath"] = (response as uploadResponse).secure_url
+              this.data["extraitNaissancePath"] = (response as uploadResponse).secure_url
 
               console.log(this.data)
 
