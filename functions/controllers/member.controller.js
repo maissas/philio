@@ -23,7 +23,7 @@ const setMember = async function (event, res) {
     dateNaissance: requestBody.dateNaissance,
     imageProfilePath: requestBody.imageProfilePath,
     imageExtraitNaissancePath: requestBody.imageExtraitNaissancePath,
-    nomPere: requestBody.nomPerey,
+    nomPere: requestBody.nomPere,
     prenomPere:  requestBody.prenomPere,
     emailPere:  requestBody.emailPere,
     numTelPere: requestBody.numTelPere,
