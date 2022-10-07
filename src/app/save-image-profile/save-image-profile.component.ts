@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../api/api.service";
 import {FormBuilder} from "@angular/forms";
 
@@ -48,13 +48,13 @@ export class SaveImageProfileComponent implements OnInit {
   fileInputExtrait
 
   data
-  constructor(private fb: FormBuilder,
+  constructor(
               private api : ApiService,
               private http: HttpClient,
-              private router: Router)
+              private route: ActivatedRoute)
   {
     console.log("data")
-    this.data = JSON.parse(this.router.getCurrentNavigation().extras as string)
+    this.data = JSON.parse(this.route.snapshot.paramMap.get('data'))
     console.log(this.data)
   }
 
