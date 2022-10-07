@@ -113,7 +113,6 @@ export class SaveImageProfileComponent implements OnInit {
               console.log((response as uploadResponse).secure_url);
               this.data["extraitNaissancePath"] = (response as uploadResponse).secure_url
 
-              //add images url
               console.log(this.data)
 
               //save member in database

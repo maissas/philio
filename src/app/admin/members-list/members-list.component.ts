@@ -48,21 +48,6 @@ export class MembersListComponent implements OnInit {
           console.log(data);
           this.members = data;
           this.dataSource = new MatTableDataSource(data['result']);
-
-          //retrieve images
-          /*for (let member = 0; member < data['result'].length; member++) {
-            console.log(data['result'][member].imgProfilPath)
-            this.api.getImgProfile(data['result'][member].imgProfilPath)
-              .subscribe(
-                data => {
-                  console.log("getImgProfile");
-                  console.log(data);
-
-                },
-                error => {
-                  console.log(error);
-                });
-          }*/
         },
         error => {
           console.log(error);
