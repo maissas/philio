@@ -1,10 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Cloudinary} from "@cloudinary/url-gen";
-import {CloudinaryModule} from '@cloudinary/ng';
-import {CloudinaryImage} from '@cloudinary/url-gen';
-import {URLConfig} from '@cloudinary/url-gen';
-import {CloudConfig} from '@cloudinary/url-gen';
+
 
 @Component({
   selector: 'app-save-image-profile',
@@ -24,26 +20,9 @@ export class SaveImageProfileComponent implements OnInit {
 
   fileInputProfile
   fileInputExtrait
-
-  cld
-  imgProfile: CloudinaryImage;
-  imgExtrait: CloudinaryImage;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    // Create a Cloudinary instance, setting some Cloud and URL configuration parameters.
-    this.cld = new Cloudinary({
-      cloud: {
-        cloudName: 'dptwusdqw'
-      },
-      url: {
-        secureDistribution: 'https://philiotennis.com',
-        secure: true
-      }
-    });
-
-    // The URL of the image is: https://philiotennis.com/dptwusdqw/image/upload/sample
-    this.imgExtrait = this.cld.image('members/extrait');
 
   }
 
