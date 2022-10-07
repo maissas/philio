@@ -48,8 +48,7 @@ export class SaveImageProfileComponent implements OnInit {
   fileInputExtrait
 
   data
-  constructor(
-              private api : ApiService,
+  constructor(private api : ApiService,
               private http: HttpClient,
               private route: ActivatedRoute)
   {
@@ -59,7 +58,6 @@ export class SaveImageProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   selectImageProfile($event){
@@ -105,6 +103,7 @@ export class SaveImageProfileComponent implements OnInit {
       response => {
         console.log("response");
         console.log((response as uploadResponse).secure_url);
+        this.data.imgProfilPath = (response as uploadResponse).secure_url
       },
       error => {
         console.log("error");
@@ -117,6 +116,7 @@ export class SaveImageProfileComponent implements OnInit {
         response => {
           console.log("response");
           console.log((response as uploadResponse).secure_url);
+          this.data.extraitNaissancePath = (response as uploadResponse).secure_url
         },
         error => {
           console.log("error");
@@ -124,9 +124,9 @@ export class SaveImageProfileComponent implements OnInit {
         });
 
     //add images url
-
+    console.log(this.data)
     //save member in database
-    /*this.api.create(this.formSignUp.value)
+    /*this.api.create(this.data)
       .subscribe(
         response => {
           console.log("response");
