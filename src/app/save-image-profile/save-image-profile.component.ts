@@ -61,8 +61,8 @@ export class SaveImageProfileComponent implements OnInit {
 
   register() {
     const formData = new FormData();
-    formData.append('file', this.fileInputProfile);
-    formData.append('file', this.fileInputExtrait);
+    formData.append('file1', this.fileInputProfile);
+    formData.append('file2', this.fileInputExtrait);
     formData.append('upload_preset', "maissasaied");
     this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
       .subscribe(
