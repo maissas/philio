@@ -38,6 +38,8 @@ router.post("/",/* multipleUpload,*/ setMember);
 // Retrieve all Members
 router.route("/").get(getAllMembers);
 
+//Upload Image
+router.route
 // Retrieve imgProfil of a member
 router.route("/imgProfile/:path").get(getImgProfile);
 

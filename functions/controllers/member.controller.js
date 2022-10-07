@@ -1,3 +1,5 @@
+require('dotenv').config();
+const cloudinary = require('cloudinary').v2;
 
 const asyncHandler = require('express-async-handler')
 const Member = require('../models/member.model')
@@ -12,8 +14,27 @@ const setMember = async function (event, res) {
   }
   */
   const requestBody = JSON.parse(event.body);
-  console.log(requestBody)
-  let member = new Member(requestBody)
+
+  let member = new Member({
+    nomClient: requestBody.nomClient,
+    prenomClient: requestBody.prenomClient,
+    adresse: requestBody.adresse,
+    ancienneActSportive: requestBody.ancienneActSportive ,
+    dateNaissance: requestBody.dateNaissance,
+    imageProfilePath: requestBody.imageProfilePath,
+    imageExtraitNaissancePath: requestBody.imageExtraitNaissancePath,
+    nomPere: requestBody.nomPerey,
+    prenomPere:  requestBody.prenomPere,
+    emailPere:  requestBody.emailPere,
+    numTelPere: requestBody.numTelPere,
+    travailPere: requestBody.travailPere,
+    nomMere: requestBody.nomMere,
+    prenomMere:  requestBody.prenomMere,
+    emailMere:  requestBody.emailMere,
+    numTelMere: requestBody.numTelMere,
+    travailMere:  requestBody.travailMere,
+  })
+  console.log(member)
   member.save(function (err) {
     if (err) {
       console.log(err)
@@ -39,6 +60,26 @@ const getAllMembers = asyncHandler(async (req, res) => {
     result: membersList,
   });
 });
+
+/** Upload Image **/
+const uploadProfileImage = async (event, context) => {
+  const body = event.body;
+  try {
+    const upload = await cloudinary.uploader.upload(body, {
+      public_id: 'netlify-uploaded-image',
+      image_metadata: true,
+    });
+    return {
+      statusCode: 200,
+      body: 'RETURN MESSAGE',
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: error, error: true }),
+    };
+  }
+};
 
 //const img = require('../../server/uploads/')
 const getImgProfile = function (req, res) {
@@ -72,7 +113,8 @@ module.exports = {
   setMember,
   getAllMembers,
   getImgProfile,
-  deleteMember
+  deleteMember,
+  uploadProfileImage
 }
 
 /*

@@ -6,23 +6,77 @@ const Schema = mongoose.Schema;
 
 const MemberSchema = Schema(
     {
-      nomClient: String,
-      prenomClient: String,
-      adresse: String,
-      ancienneActSportive: String,
-      dateNaissance: String,
-      nomPere: String,
-      prenomPere: String,
-      emailPere: String,
-      numTelPere: String,
-      travailPere: String,
-      nomMere: String,
-      prenomMere: String,
-      emailMere: String,
-      numTelMere: String,
-      travailMere: String,
+      nomClient:  {
+        type: String,
+        required: true
+      },
+      prenomClient:  {
+        type: String,
+        required: true
+      },
+      adresse:  {
+        type: String,
+        required: true
+      },
+      ancienneActSportive:  {
+        type: String,
+        required: true
+      },
+      dateNaissance:  {
+        type: String,
+        required: true
+      },
+      nomPere:  {
+        type: String,
+        required: true
+      },
+      prenomPere:  {
+        type: String,
+        required: true
+      },
+      emailPere:  {
+        type: String,
+        required: true
+      },
+      numTelPere:  {
+        type: String,
+        required: true
+      },
+      travailPere:  {
+        type: String,
+        required: true
+      },
+      nomMere:  {
+        type: String,
+        required: true
+      },
+      prenomMere:  {
+        type: String,
+        required: true
+      },
+      emailMere:  {
+        type: String,
+        required: true
+      },
+      numTelMere:  {
+        type: String,
+        required: true
+      },
+      travailMere:  {
+        type: String,
+        required: true
+      },
+      imageProfilePath:  {
+        type: String,
+        required: true
+      },
+      imageExtraitNaissancePath:  {
+        type: String,
+        required: true
+      }
     },
-    { timestamps: true }
+    { timestamps: true
+    }
 )
 
 module.exports = mongoose.model("Member", MemberSchema)
