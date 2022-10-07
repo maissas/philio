@@ -1,7 +1,29 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
-
+class uploadResponse
+{
+  "asset_id": String;
+  "public_id":String;
+  "version": number;
+  "version_id":String;
+  "signature":String;
+  "width":number;
+  "height":number;
+  "format":String;
+  "resource_type":String;
+  "created_at": String;
+  "tags": Array<any>;
+  "bytes": number;
+  "type": String;
+  "etag": String;
+  "placeholder":boolean;
+  "url": String;
+  "secure_url": String;
+  "folder": String;
+  "access_mode": String;
+  "original_filename": String;
+}
 @Component({
   selector: 'app-save-image-profile',
   templateUrl: './save-image-profile.component.html',
@@ -69,7 +91,7 @@ export class SaveImageProfileComponent implements OnInit {
       .subscribe(
       response => {
         console.log("response");
-        console.log(response);
+        console.log((response as uploadResponse).secure_url);
       },
       error => {
         console.log("error");
@@ -81,7 +103,7 @@ export class SaveImageProfileComponent implements OnInit {
       .subscribe(
         response => {
           console.log("response");
-          console.log(response);
+          console.log((response as uploadResponse).secure_url);
         },
         error => {
           console.log("error");
