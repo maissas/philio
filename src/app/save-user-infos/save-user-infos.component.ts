@@ -84,7 +84,7 @@ export class SaveUserInfosComponent implements OnInit {
             console.log("response");
             console.log(response);
             this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
-            this.router.navigate(['/user']);
+            this.router.navigate(['signup/saveImageProfile']);
 
           },
           error => {
