@@ -16,10 +16,17 @@
       <label style="color: white"> Image Du Profil : </label><br>
 
       <input type="file" id="uploaderProfileImage" name="imgProfil" (change)="selectImageProfile($event)"/>
+
       <!-- Extrait De Naissance-->
       <br><br>
       <label style="color: white"> Extrait De Naissance : </label><br>
+
       <input type="file" id="uploaderExtraitNaissance" name="extraitNaissance" (change)="selectExtraitNaissance($event)" />
+
+    <cl-image public-id="dog" angle="20" format="jpg">
+      <cl-transformation height="150" width="150" crop="fill" effect="sepia"></cl-transformation>
+      <cl-transformation overlay="text:arial_20:Angular" color="#EECCAA" gravity="south" y="20"></cl-transformation>
+    </cl-image>
 
     <br><br>
       <button mat-button color="primary" (click)="register()">Enregistrer</button>

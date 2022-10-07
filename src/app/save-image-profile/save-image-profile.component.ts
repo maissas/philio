@@ -1,6 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {Cloudinary} from "@cloudinary/url-gen";
+import {CloudinaryModule} from '@cloudinary/ng';
+import {CloudinaryImage} from '@cloudinary/url-gen';
+import {URLConfig} from '@cloudinary/url-gen';
+import {CloudConfig} from '@cloudinary/url-gen';
 
 @Component({
   selector: 'app-save-image-profile',
@@ -20,9 +24,27 @@ export class SaveImageProfileComponent implements OnInit {
 
   fileInputProfile
   fileInputExtrait
+
+  cld
+  imgProfile: CloudinaryImage;
+  imgExtrait: CloudinaryImage;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    // Create a Cloudinary instance, setting some Cloud and URL configuration parameters.
+    this.cld = new Cloudinary({
+      cloud: {
+        cloudName: 'dptwusdqw'
+      },
+      url: {
+        secureDistribution: 'https://philiotennis.com',
+        secure: true
+      }
+    });
+
+    // The URL of the image is: https://philiotennis.com/dptwusdqw/image/upload/sample
+    this.imgExtrait = this.cld.image('members/extrait');
+
   }
 
   selectImageProfile($event){
@@ -61,10 +83,10 @@ export class SaveImageProfileComponent implements OnInit {
 
   register() {
     const formData = new FormData();
-    formData.append('file1', this.fileInputProfile);
-    formData.append('file2', this.fileInputExtrait);
+    formData.append('file', this.fileInputProfile);
+
     formData.append('upload_preset', "maissasaied");
-    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
+    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload/members/profile", formData)
       .subscribe(
       response => {
         console.log("response");
@@ -75,5 +97,16 @@ export class SaveImageProfileComponent implements OnInit {
         console.log(error);
       });
 
+    formData.append('file', this.fileInputExtrait);
+    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload/members/extrait", formData)
+      .subscribe(
+        response => {
+          console.log("response");
+          console.log(response);
+        },
+        error => {
+          console.log("error");
+          console.log(error);
+        });
   }
 }
