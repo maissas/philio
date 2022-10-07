@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-
+import {FormGroup} from "@angular/forms";
+import axios from "axios";
 @Component({
   selector: 'app-save-image-profile',
   templateUrl: './save-image-profile.component.html',
@@ -15,10 +16,36 @@ export class SaveImageProfileComponent implements OnInit {
   fileImageProfile: File | null = null;
   imageData: string;
 */
-
+  formSignUp: FormGroup;
+  fileInput
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+
+  selectImageProfile($event){
+    if ((event.target as HTMLInputElement).files.length > 0){
+      console.log((event.target as HTMLInputElement).files[0])
+      //const fileInput = this.readFile((event.target as HTMLInputElement).files[0]);
+      const fileInput = (event.target as HTMLInputElement).files[0];
+
+      //this.formSignUp.patchValue({ imgProfil: file });
+    } else {
+      console.log("there is No ImgProfil image !!")
+    }
+  }
+
+  /*
+  selectExtraitNaissance($event){
+    if ((event.target as HTMLInputElement).files.length > 0){
+      const file = this.readFile((event.target as HTMLInputElement).files[0]);
+      //this.formSignUp.patchValue({ extraitNaissance: file });
+    } else {
+      console.log("there is No extraitNaissance image !!")
+    }
+
   }
 
   readFile(file) {
@@ -31,26 +58,13 @@ export class SaveImageProfileComponent implements OnInit {
       reader.readAsDataURL(file);
     });
   };
+  */
 
-  selectImageProfile($event){
-    if ((event.target as HTMLInputElement).files.length > 0){
-      console.log((event.target as HTMLInputElement).files[0])
-      const file = this.readFile((event.target as HTMLInputElement).files[0]);
-
-      //this.formSignUp.patchValue({ imgProfil: file });
-    } else {
-      console.log("there is No ImgProfil image !!")
-    }
-  }
-
-  selectExtraitNaissance($event){
-    if ((event.target as HTMLInputElement).files.length > 0){
-      const file = this.readFile((event.target as HTMLInputElement).files[0]);
-      //this.formSignUp.patchValue({ extraitNaissance: file });
-    } else {
-      console.log("there is No extraitNaissance image !!")
-    }
+  register() {
+    const formData = new FormData();
+    formData.append('file', this.fileInput);
+    formData.append('upload_preset', "wtfvrxqs");
+    axios.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
 
   }
-
 }
