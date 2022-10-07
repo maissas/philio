@@ -18,7 +18,8 @@ export class SaveImageProfileComponent implements OnInit {
   imageData: string;
 */
 
-  fileInput
+  fileInputProfile
+  fileInputExtrait
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -28,25 +29,24 @@ export class SaveImageProfileComponent implements OnInit {
     if ((event.target as HTMLInputElement).files.length > 0){
       console.log((event.target as HTMLInputElement).files[0])
       //const fileInput = this.readFile((event.target as HTMLInputElement).files[0]);
-      this.fileInput = (event.target as HTMLInputElement).files[0];
-
-      //this.formSignUp.patchValue({ imgProfil: file });
+      this.fileInputProfile = (event.target as HTMLInputElement).files[0];
     } else {
       console.log("there is No ImgProfil image !!")
     }
   }
 
-  /*
+
   selectExtraitNaissance($event){
     if ((event.target as HTMLInputElement).files.length > 0){
-      const file = this.readFile((event.target as HTMLInputElement).files[0]);
-      //this.formSignUp.patchValue({ extraitNaissance: file });
+      console.log((event.target as HTMLInputElement).files[0])
+      //const file = this.readFile((event.target as HTMLInputElement).files[0]);
+      this.fileInputExtrait = (event.target as HTMLInputElement).files[0];
     } else {
       console.log("there is No extraitNaissance image !!")
     }
 
   }
-
+/*
   readFile(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -61,7 +61,8 @@ export class SaveImageProfileComponent implements OnInit {
 
   register() {
     const formData = new FormData();
-    formData.append('file', this.fileInput);
+    formData.append('file', this.fileInputProfile);
+    formData.append('file', this.fileInputExtrait);
     formData.append('upload_preset', "maissasaied");
     this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
       .subscribe(
