@@ -19,5 +19,5 @@ export class Membre {
   travailMere: String;
   imageProfilePath: String;
   imageExtraitNaissancePath: String;
-  path: String;
+  x: String;
 }
