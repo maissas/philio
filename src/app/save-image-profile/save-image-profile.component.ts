@@ -103,7 +103,7 @@ export class SaveImageProfileComponent implements OnInit {
       response => {
         console.log("response");
         console.log((response as uploadResponse).secure_url);
-        this.data.value.imgProfilPath = (response as uploadResponse).secure_url
+        this.data["imgProfilPath"] = (response as uploadResponse).secure_url
 
         formData.append('file', this.fileInputExtrait);
         this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
@@ -111,7 +111,7 @@ export class SaveImageProfileComponent implements OnInit {
             response => {
               console.log("response");
               console.log((response as uploadResponse).secure_url);
-              this.data.value.extraitNaissancePath = (response as uploadResponse).secure_url
+              this.data["extraitNaissancePath"] = (response as uploadResponse).secure_url
 
               //add images url
               console.log(this.data)
