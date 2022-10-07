@@ -27,6 +27,14 @@
 
         <!------------------------------------ client -------------------------------------------->
 
+        <!--imgProfil Column -->
+        <ng-container matColumnDef="imgProfil">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Image Du Profil </th>
+          <td mat-cell *matCellDef="let row">
+            <img src='{{row.imgProfilPath }}' width="150" height="150" (click)="openMember(row)">
+          </td>
+        </ng-container>
+
         <!-- nomClient Column -->
         <ng-container matColumnDef="nomClient">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
@@ -55,14 +63,6 @@
         <ng-container matColumnDef="dateNaissance">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Date de naissance </th>
           <td mat-cell *matCellDef="let row"> {{row.dateNaissance}} </td>
-        </ng-container>
-
-        <!--imgProfil Column -->
-        <ng-container matColumnDef="imgProfil">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Image Du Profil </th>
-          <td mat-cell *matCellDef="let row">
-            <!--<img src='{{"http://localhost:8080/images/" + row.imgProfilPath }}' width="150" height="150" (click)="openMember(row)">-->
-          </td>
         </ng-container>
 
         <!-- Extrait De Naissance Column -->
