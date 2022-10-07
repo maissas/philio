@@ -39,7 +39,7 @@ const setMember = async function (event, res) {
     if (err) {
       console.log(err)
       res.send("ERR: " + err)
-      return next(err);
+      return (err);
     }
     res.send({
       description:'Member Created successfully',
