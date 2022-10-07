@@ -65,7 +65,7 @@ export class SaveImageProfileComponent implements OnInit {
     formData.append('file', this.fileInputProfile);
 
     formData.append('upload_preset', "maissasaied");
-    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload/members/profile", formData)
+    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
       .subscribe(
       response => {
         console.log("response");
@@ -77,7 +77,7 @@ export class SaveImageProfileComponent implements OnInit {
       });
 
     formData.append('file', this.fileInputExtrait);
-    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload/members/extrait", formData)
+    this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
       .subscribe(
         response => {
           console.log("response");
