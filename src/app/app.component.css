@@ -17,7 +17,8 @@
 .page-content{
   z-index: 2;
   box-sizing: border-box;
-  height:100%;
+  height: 100px;
+  position: fixed ;
 
 }
 
