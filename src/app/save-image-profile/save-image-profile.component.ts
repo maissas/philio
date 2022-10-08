@@ -141,6 +141,7 @@ export class SaveImageProfileComponent implements OnInit {
               });
         } else {
           //save member in database
+          this.data["imageExtraitNaissancePath"] = ""
           this.api.create(this.data)
             .subscribe(
               response => {
