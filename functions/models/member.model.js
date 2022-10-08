@@ -72,7 +72,8 @@ const MemberSchema = Schema(
       },
       imageExtraitNaissancePath:  {
         type: String,
-        required: true
+        required: false,
+        default: "none"
       }
     },
     { timestamps: true
