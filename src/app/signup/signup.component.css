@@ -1,11 +1,5 @@
 
-
-.container{
-  max-width: 700px;
-  margin-bottom: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
-  color : white;
+.bg{
   /* The image used */
   background-image: url("../../assets/bg.JPG");
   /* Full height */
@@ -14,6 +8,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container{
+  max-width: 700px;
+  margin-bottom: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color : white;
 }
 
 
