@@ -8,7 +8,7 @@
       <mat-card-title>{{this.data.membre.prenomClient }} {{this.data.membre.nomClient}}</mat-card-title>
       <mat-card-subtitle>{{this.data.membre.dateNaissance}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src='{{"http://localhost:8080/images/" + this.data.membre.imgProfilPath }}' height="300">
+    <img mat-card-image src='{{this.data.membre.imageProfilePath }}' height="300">
     <mat-card-content>
       <h3> {{this.data.membre.adresse}}</h3>
       <h3> {{this.data.membre.ancienneActSportive}}</h3>
