@@ -1,17 +1,17 @@
 
 .bg{
-  /* The image used */
+  /* The image used
   background-image: url("../../assets/bg.JPG");
-  /* Full height */
+  /* Full height
   height: 100%;
   width: 100%;
-  /* Center and scale the image nicely */
+  /* Center and scale the image nicely
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover;*/
 }
 
 .container{
