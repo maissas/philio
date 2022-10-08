@@ -15,9 +15,6 @@
 }
 
 .page-content{
-  margin-bottom: 0px;
-  position: relative;
-  top:120px;
   z-index: 2;
   box-sizing: border-box;
   height:100%;
