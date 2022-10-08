@@ -123,6 +123,7 @@ export class SaveImageProfileComponent implements OnInit {
                   response => {
                     console.log("response");
                     console.log(response);
+
                     //this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
                   },
                   error => {

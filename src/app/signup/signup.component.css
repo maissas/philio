@@ -8,11 +8,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
 }
 
 .container{
   max-width: 700px;
-  margin-bottom: 60px;
+  //margin-bottom: 60px;
   margin-left: 20px;
   margin-right: 20px;
   color : white;

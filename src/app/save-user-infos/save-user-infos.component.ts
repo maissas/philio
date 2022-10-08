@@ -20,6 +20,8 @@ export class SaveUserInfosComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
+    localStorage.setItem("USERINFOSSAVED", "FALSE")
+
     this.formSignUp = this.fb.group({
       nomClient: ['', Validators.required],
       prenomClient: ['', Validators.required],
@@ -81,6 +83,8 @@ export class SaveUserInfosComponent implements OnInit {
       console.log(formData.get("nomClient"))
       */
       //'http://127.0.0.1:8080/uploads/'
+
+      localStorage.setItem("USERINFOSSAVED", "TRUE")
       this.router.navigate(['signup/saveImageProfile', {data : JSON.stringify(this.formSignUp.value)}]);
 
     } else {
