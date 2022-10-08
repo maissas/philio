@@ -14,7 +14,11 @@
   height: 120px;
 }
 
-.page-content{ height:100%;display:flex;flex:1 1 auto;}
+.page-content{
+  height:100%;
+  width: 100%;
+  display:flex;
+}
 
 .example-spacer {
   flex: 1 1 auto;
