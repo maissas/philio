@@ -17,5 +17,7 @@ export class AppComponent {
       "philio_icon",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/philio_logo.svg")
     );
+
+    localStorage.setItem("USERINFOSSAVED", "FALSE")
   }
 }

@@ -20,7 +20,7 @@ export class SaveUserInfosComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    localStorage.setItem("USERINFOSSAVED", "FALSE")
+
 
     this.formSignUp = this.fb.group({
       nomClient: ['', Validators.required],
