@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ApiService} from "../api/api.service";
 import {FormBuilder} from "@angular/forms";
+import {SnackbarService} from "../SnackbarService/snackbar.service";
 
 class uploadResponse
 {
@@ -50,7 +51,8 @@ export class SaveImageProfileComponent implements OnInit {
   data
   constructor(private api : ApiService,
               private http: HttpClient,
-              private route: ActivatedRoute)
+              private route: ActivatedRoute,
+              private snackbarService : SnackbarService)
   {
     console.log("data")
     this.data = JSON.parse(this.route.snapshot.paramMap.get('data'))
@@ -106,36 +108,53 @@ export class SaveImageProfileComponent implements OnInit {
         this.data["imageProfilePath"] = (response as uploadResponse).secure_url
           //.replace("///g", "&#x2f;");
 
-        formData.append('file', this.fileInputExtrait);
-        this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
-          .subscribe(
-            response => {
-              console.log("response");
-              console.log((response as uploadResponse).secure_url);
-              this.data["imageExtraitNaissancePath"] = (response as uploadResponse).secure_url
+        if (this.fileInputExtrait){
+          formData.append('file', this.fileInputExtrait);
+          this.http.post("https://api.cloudinary.com/v1_1/dptwusdqw/upload", formData)
+            .subscribe(
+              response => {
+                console.log("response");
+                console.log((response as uploadResponse).secure_url);
+                this.data["imageExtraitNaissancePath"] = (response as uploadResponse).secure_url
                 //.replace("///g", "&#x2f;");
 
-              console.log(this.data)
+                console.log(this.data)
 
-              //save member in database
-              this.api.create(this.data)
-                .subscribe(
-                  response => {
-                    console.log("response");
-                    console.log(response);
+                //save member in database
+                this.api.create(this.data)
+                  .subscribe(
+                    response => {
+                      console.log("response");
+                      console.log(response);
 
-                    //this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
-                  },
-                  error => {
-                    console.log("error");
-                    console.log(error);
-                  });
+                      this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
+                    },
+                    error => {
+                      console.log("error");
+                      console.log(error);
+                    });
 
-            },
-            error => {
-              console.log("error");
-              console.log(error);
-            });
+              },
+              error => {
+                console.log("error");
+                console.log(error);
+              });
+        } else {
+          //save member in database
+          this.api.create(this.data)
+            .subscribe(
+              response => {
+                console.log("response");
+                console.log(response);
+
+                this.snackbarService.info("Félicitations, vous êtes inscrit avec succès !")
+              },
+              error => {
+                console.log("error");
+                console.log(error);
+              });
+        }
+
 
       },
       error => {
