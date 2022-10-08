@@ -7,17 +7,10 @@
 }
 
 .mat-card-subtitle {
-  color : #ffffff;
+  color : aliceblue;
 }
+
 
 .cardHeader{
   position: center;
-}
-
-.mat-button{
-  margin-top: 10px;
-  width: 100%;
-  color: white;
-  height: 40px;
-  background-color: #3F51B5;
 }
