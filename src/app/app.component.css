@@ -14,13 +14,7 @@
   height: 120px;
 }
 
-.page-content{
-  position: relative;
-  z-index: 2;
-  box-sizing: border-box;
-  height:100%;
-
-}
+.page-content{ height:100%;display:flex;flex:1 1 auto;}
 
 .example-spacer {
   flex: 1 1 auto;
