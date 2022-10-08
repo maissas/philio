@@ -15,10 +15,10 @@
 }
 
 .page-content{
+  position: relative;
   z-index: 2;
   box-sizing: border-box;
-  height: 100px;
-  position: fixed ;
+  height:100%;
 
 }
 
