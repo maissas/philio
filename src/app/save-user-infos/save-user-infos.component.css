@@ -1,14 +1,15 @@
 .mat-card{
   background-color: rgba(0, 0, 0, 0.61);
-}
-
-.container-to-scroll{
+  height: 90% !important;
   position: relative;
-  z-index: 1;
-  display: block;
-  height: 100%;
+  overflow: hidden;
+}
+.mat-card-content {
+  max-height: 100%;
+  position: absolute;
   overflow: auto;
 }
+
 
 .mat-h1, mat-card-title {
   color : white;
