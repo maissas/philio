@@ -2,6 +2,9 @@
   background-color: rgba(0, 0, 0, 0.61);
 }
 
+.container-to-scroll{
+  overflow: auto;
+}
 
 .mat-h1, mat-card-title {
   color : white;
