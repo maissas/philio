@@ -2,9 +2,6 @@
   background-color: rgba(0, 0, 0, 0.61);
 }
 
-.mat-card-content {
-  overflow: auto;
-}
 
 .mat-h1, mat-card-title {
   color : white;
