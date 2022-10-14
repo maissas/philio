@@ -2,14 +2,14 @@
   background-color: rgba(0, 0, 0, 0.61);
   height: 500% !important;
   position: relative;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
-.mat-card-content {
+/*.mat-card-content {
   max-height: 100%;
   position: absolute;
   overflow: auto;
 
-}
+}*/
 
 
 .mat-h1, mat-card-title {
@@ -21,7 +21,7 @@
 }
 
 .example-full-width {
-  margin-top: 10px;
+  /*margin-top: 10px;*/
   width: 100%;
 }
 
