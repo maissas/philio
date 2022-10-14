@@ -15,6 +15,12 @@
 }
 
 .page-content{
+  background: url(../assets/bg.JPG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
   position: relative;
   z-index: 1;
   box-sizing: border-box;
