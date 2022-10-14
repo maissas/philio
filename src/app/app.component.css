@@ -1,5 +1,4 @@
 
-
 .header {
   position:sticky;
   position:-webkit-sticky;
@@ -15,7 +14,7 @@
 }
 
 .page-content{
-  background: url(../assets/bg.JPG) no-repeat center center fixed;
+  background: url(../assets/bg.JPG) no-repeat center center ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,8 +25,6 @@
   box-sizing: border-box;
   height:100%;
   width: 100%;
-  display:flex;
-
 }
 
 .example-spacer {
