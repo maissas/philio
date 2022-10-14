@@ -3,6 +3,12 @@
   overflow-y: auto;
 }
 
+.mat-card-content {
+  max-height: 100%;
+  position: absolute;
+  overflow: auto;
+}
+
 .mat-h1, mat-card-title {
   color : white;
 }
