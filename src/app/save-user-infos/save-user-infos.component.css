@@ -1,6 +1,6 @@
 .mat-card{
   background-color: rgba(0, 0, 0, 0.61);
-  height: 400% !important;
+  height: 500% !important;
   position: relative;
   overflow: hidden;
 }
@@ -46,7 +46,7 @@ mat-datepicker-toggle {
 
 .mat-button{
   margin-top: 10px;
-  width: 100%;
+
   color: white;
   height: 40px;
   background-color: #3F51B5;
