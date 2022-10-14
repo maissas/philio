@@ -1,5 +1,6 @@
 .mat-card{
   background-color: rgba(0, 0, 0, 0.61);
+  overflow-y: auto;
 }
 
 .mat-h1, mat-card-title {
