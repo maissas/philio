@@ -1,6 +1,6 @@
 .mat-card{
   background-color: rgba(0, 0, 0, 0.61);
-  height: 500% !important;
+  height: 100% !important;
   position: relative;
   /*overflow: hidden;*/
 }
