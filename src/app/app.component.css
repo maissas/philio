@@ -20,11 +20,13 @@
   -o-background-size: cover;
   background-size: cover;
 
-  position: relative;
-  z-index: 1;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
   box-sizing: border-box;
   height:100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .example-spacer {
